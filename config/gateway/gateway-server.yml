@@ -26,8 +26,8 @@ spring:
           - id: subject-service
             uri: lb://subject-service
             predicates:
-              - Path=/subject/**
+            - Path=/subject/**
             filters:
-              - RewritePath=/subject/(?<path>.*), /$\{path}
+            - RewritePath=/subject/(?<path>.*), /$\{path}
             filters:
             - RewritePath=/department/(?<path>.*), /$\{path}
