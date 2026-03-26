@@ -1,4 +1,4 @@
-spring:
+  spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/web
@@ -22,4 +22,5 @@ eureka:
     service-url:
       defalue-zone: http://localhost:8761/eureka/
 department-service:
-  base-url: http://department-service/api/v1/department-service/departments/
+  # base-url: http://department-service/api/v1/department-service/departments/
+  base-url: http://gateway-server/department/api/v1/department-service/departments/
