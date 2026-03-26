@@ -23,5 +23,11 @@ spring:
             predicates:
             - Path=/department/**
             # 경로 재작성 필터로 요청 경로를 다른 경로로 변경한다.
+          - id: subject-service
+            uri: lb://subject-service
+            predicates:
+              - Path=/subject/**
+            filters:
+              - RewritePath=/subject/(?<path>.*), /$\{path}
             filters:
             - RewritePath=/department/(?<path>.*), /$\{path}
